@@ -1,0 +1,436 @@
+# Instincts generated from https://github.com/lllyyysss77/xyflow
+# Generated: 2026-06-01T10:38:40.942Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: xyflow-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Commit Length
+
+## Action
+
+Keep commit messages concise (~48 characters)
+
+## Evidence
+
+- Average commit message length: 48 chars
+- Based on 12 commits
+
+---
+id: xyflow-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: xyflow-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: xyflow-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: xyflow-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: xyflow-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: xyflow-workflow-cross-framework-error-message-update
+trigger: "when doing cross framework error message update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Workflow Cross Framework Error Message Update
+
+## Action
+
+Follow the cross-framework-error-message-update workflow:
+1. Edit error message logic in React files (e.g., components, utils, store).
+2. Edit error message logic in Svelte files (e.g., components, utils, store).
+3. Update shared system files if error message constants or utilities are involved.
+4. Optionally update or add changeset files for changelog tracking.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: packages/react/src/components/Handle/index.tsx, packages/react/src/hooks/useStore.ts, packages/react/src/index.ts
+
+---
+id: xyflow-workflow-add-or-update-changeset
+trigger: "when doing add or update changeset"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Workflow Add Or Update Changeset
+
+## Action
+
+Follow the add-or-update-changeset workflow:
+1. Create a new file in the .changeset directory with a descriptive name.
+2. Document the nature of the change in markdown.
+3. Commit the changeset file, often alongside code changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .changeset/*.md
+
+---
+id: xyflow-workflow-feature-or-fix-cross-package-merge
+trigger: "when doing feature or fix cross package merge"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/lllyyysss77/xyflow
+---
+
+# Xyflow Workflow Feature Or Fix Cross Package Merge
+
+## Action
+
+Follow the feature-or-fix-cross-package-merge workflow:
+1. Merge main into the feature branch if needed to resolve conflicts.
+2. Update or add changeset files.
+3. Update implementation files across React, Svelte, and System packages.
+4. Update example or test files if relevant.
+5. Commit and push the merge.
+6. Merge pull request into main.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .changeset/*.md, packages/react/**, packages/svelte/**
+
+---
+id: xyflow-instinct-file-naming-camelCase
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct File Naming CamelCase
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Observed in packages/react/src/components/Handle/index.tsx
+
+---
+id: xyflow-instinct-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: xyflow-instinct-class-naming-PascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: xyflow-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: xyflow-instinct-import-style-relative
+trigger: "When importing modules within a package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Import Style Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: xyflow-instinct-export-style-named
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: xyflow-instinct-testing-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Testing Location Separate
+
+## Action
+
+Place test files in a separate test directory, not alongside source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: xyflow-instinct-commit-prefix-mixed
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Commit Prefix Mixed
+
+## Action
+
+Prefix the commit message with 'fix:', 'chore:', or 'refactor:' as appropriate
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Seen in commit 'fix: make error messages framework-specific'
+
+---
+id: xyflow-instinct-commit-length-short
+trigger: "When composing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Commit Length Short
+
+## Action
+
+Keep the commit message concise, averaging around 48 characters
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Seen in commit examples
+
+---
+id: xyflow-instinct-cross-framework-error-message-update
+trigger: "When error messages need to be improved, clarified, or made framework-specific in both React and Svelte implementations"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Cross Framework Error Message Update
+
+## Action
+
+Edit error message logic in both React and Svelte files, update shared system files if needed, and optionally update or add changeset files
+
+## Evidence
+
+- Workflow: cross-framework-error-message-update
+- Commits editing both React and Svelte error logic
+
+---
+id: xyflow-instinct-add-or-update-changeset
+trigger: "When a change is made that should be tracked in the release changelog, such as a feature, fix, or breaking change"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Add Or Update Changeset
+
+## Action
+
+Create or update a markdown file in .changeset documenting the change and commit it with the code
+
+## Evidence
+
+- Workflow: add-or-update-changeset
+- Commits creating .changeset/*.md files
+
+---
+id: xyflow-instinct-feature-or-fix-cross-package-merge
+trigger: "When a feature or fix is ready to be merged from a topic branch into main, especially if it affects multiple frameworks"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: lllyyysss77/xyflow
+---
+
+# Xyflow Instinct Feature Or Fix Cross Package Merge
+
+## Action
+
+Merge main into the feature branch if needed, update/add changeset files, update implementation files across React, Svelte, and System, update examples/tests if relevant, commit and push, then merge PR into main
+
+## Evidence
+
+- Workflow: feature-or-fix-cross-package-merge
+- Commits merging main and updating multiple packages
+
